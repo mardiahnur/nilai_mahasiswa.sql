@@ -72,12 +72,12 @@ insert into nilai(nilai_id, mahasiswa_id, matkul_id, semester_id, nilai) values
 (7, 3, 12, 3, 80);
 
 --mata kuliah yang diikuti terbagi untuk tiap semester
-select mahasiswa.nim as nim, matkul.nama as matkul, nilai.nilai as nilai
+select mahasiswa.nim as nim, matkul.nama as matkul, semester.semester  as semester
 from mahasiswa
 join nilai on mahasiswa.mahasiswa_id = nilai.mahasiswa_id
 join matkul on nilai.matkul_id = nilai.matkul_id
 join semester on nilai.semester_id = semester.semester_id
-where semester.semester  = 'semester dua';
+where semester.semester  = 'semester tiga';
 
 -- rata rata nilai per mahasiswa secara keseluruhan
 select mahasiswa.nim, avg(nilai.nilai) as rata_rata_nilai
